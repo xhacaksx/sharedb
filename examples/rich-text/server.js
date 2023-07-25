@@ -40,10 +40,10 @@ function startServer() {
   app.use(express.static('node_modules/quill/dist'));
 
   // Set the correct Content-Type header for JavaScript files
-  app.get('*.js', function (req, res, next) {
-    res.setHeader('Content-Type', mime.getType('js'));
-    next();
-  });
+  // app.get('*.js', function (req, res, next) {
+  //   res.setHeader('Content-Type', mime.getType('js'));
+  //   next();
+  // });
   // Route to handle create-new-document request
   app.get('/create-new-document', function(req, res) {
     // Generate a new document ID using uuid
