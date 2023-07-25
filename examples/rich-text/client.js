@@ -18,6 +18,7 @@ function createNewDocument(callback) {
       return response.json();
     })
     .then(function(data) {
+      console.log('New document created with ID:', data.docId);
       callback(data.docId);
     })
     .catch(function(error) {
