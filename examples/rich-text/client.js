@@ -19,11 +19,11 @@ function createNewDocument(callback) {
       return response.json();
     })
     .then(function(data) {
-      console.log('New document created with ID:', data.docId);
+      //console.log('New document created with ID:', data.docId);
       callback(data.docId);
     })
     .catch(function(error) {
-      console.error('Error creating a new document:', error);
+      //console.error('Error creating a new document:', error);
     });
 }
 function setupDocument(docId) {
