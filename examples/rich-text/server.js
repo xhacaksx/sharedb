@@ -35,8 +35,7 @@ function createDoc(callback) {
 function startServer() {
   // Create a web server to serve files and listen to WebSocket connections
   var app = express();
-  app.use(express.static('static'));
-  app.use(express.static('node_modules/quill/dist'));
+  
 
   // Route to handle create-new-document request
   app.get('/create-new-document', function(req, res) {
@@ -58,6 +57,10 @@ function startServer() {
   });
   var server = http.createServer(app);
 
+
+  app.use(express.static('static'));
+  app.use(express.static('node_modules/quill/dist'));
+  
   // Connect any incoming WebSocket connection to ShareDB
   var wss = new WebSocket.Server({server: server});
   wss.on('connection', function(ws) {
