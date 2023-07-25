@@ -66,6 +66,8 @@ function startServer() {
   });
 
   const port = process.env.PORT || 8080;
-  server.listen(process.env.PORT);
-  console.log(`Listening on http://localhost:${PORT}`);
+server.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
+
 }
