@@ -13,6 +13,7 @@ function getDocumentIdFromURL() {
 
 function createNewDocument(callback) {
   // You can customize the URL for creating a new document on the server
+  console.log("Entered");
   fetch('/create-new-document')
     .then(function(response) {
       return response.json();
@@ -116,10 +117,13 @@ var docId = getDocumentIdFromURL();
 if (docId) {
   // If the document ID is present in the URL, set up the document
   setupDocument(docId);
+  console.log("1");
 } else {
+  console.log("2");
   // If the document ID is not present in the URL, create a new document
   createNewDocument(function(newDocId) {
     // Redirect to the new URL with the document ID as a query parameter
     window.location.href = '/?docId=' + newDocId;
   });
+  
 }
