@@ -6,6 +6,7 @@ var WebSocket = require('ws');
 var WebSocketJSONStream = require('@teamwork/websocket-json-stream');
 var ShareDBMongo = require('sharedb-mongo');
 var uuid = require('uuid');
+var mime = require('mime');
 ShareDB.types.register(richText.type);
 
 
@@ -40,7 +41,7 @@ function startServer() {
 
   // Set the correct Content-Type header for JavaScript files
   app.get('*.js', function (req, res, next) {
-    res.type('application/javascript');
+    res.setHeader('Content-Type', mime.getType('js'));
     next();
   });
   // Route to handle create-new-document request
