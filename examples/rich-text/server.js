@@ -7,7 +7,7 @@ var WebSocketJSONStream = require('@teamwork/websocket-json-stream');
 var ShareDBMongo = require('sharedb-mongo');
 var uuid = require('uuid');
 ShareDB.types.register(richText.type);
-var config = require('./config');
+
 
 var backend = new ShareDB({
   db: new ShareDBMongo('mongodb+srv://akshat:akshat@collab-test.9cngcdw.mongodb.net/?retryWrites=true&w=majority')

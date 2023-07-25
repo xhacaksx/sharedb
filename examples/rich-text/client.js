@@ -40,7 +40,7 @@ function setupDocument(docId) {
     connection.close();
   };
   window.connect = function() {
-    var socket = new ReconnectingWebSocket('wss://' + window.location.host, [], {
+    var socket = new ReconnectingWebSocket('ws://' + window.location.host, [], {
     // ShareDB handles dropped messages, and buffering them while the socket
     // is closed has undefined behavior
       maxEnqueuedMessages: 0
