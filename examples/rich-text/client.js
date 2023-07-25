@@ -21,7 +21,7 @@ function createNewDocument(callback) {
       callback(data.docId);
     })
     .catch(function(error) {
-      console.log('Error creating a new document:', error);
+      console.error('Error creating a new document:', error);
     });
 }
 function setupDocument(docId) {

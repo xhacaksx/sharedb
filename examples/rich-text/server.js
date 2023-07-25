@@ -10,7 +10,7 @@ ShareDB.types.register(richText.type);
 var config = require('./config');
 
 var backend = new ShareDB({
-  db: new ShareDBMongo(config.mongodbUrl)
+  db: new ShareDBMongo('mongodb+srv://akshat:akshat@collab-test.9cngcdw.mongodb.net/?retryWrites=true&w=majority')
 });
 createDoc(startServer);
 
