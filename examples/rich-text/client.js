@@ -123,7 +123,8 @@ if (docId) {
   // If the document ID is not present in the URL, create a new document
   createNewDocument(function(newDocId) {
     // Redirect to the new URL with the document ID as a query parameter
-    window.location.href = '/?docId=' + newDocId;
+    var newUrl = window.location.origin + '/?docId=' + newDocId;
+    window.location.href = newUrl;
   });
   
 }
