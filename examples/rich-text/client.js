@@ -28,7 +28,7 @@ function createNewDocument(callback) {
 }
 function setupDocument(docId) {
   // Open WebSocket connection to ShareDB server
-  var socket = new ReconnectingWebSocket('ws://' + window.location.host, [], {
+  var socket = new ReconnectingWebSocket('wss://' + window.location.host, [], {
   // ShareDB handles dropped messages, and buffering them while the socket
   // is closed has undefined behavior
     maxEnqueuedMessages: 0
