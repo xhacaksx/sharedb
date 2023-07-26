@@ -12,18 +12,16 @@ function getDocumentIdFromURL() {
 }
 
 function createNewDocument(callback) {
-  // You can customize the URL for creating a new document on the server
-  console.log("Entered");
-  fetch('/create-new-document')
-    .then(function(response) {
+  // Make a fetch request to your serverless function to create a new document
+  fetch('/api/create-new-document', { method: 'POST' })
+    .then(function (response) {
       return response.json();
     })
-    .then(function(data) {
-      //console.log('New document created with ID:', data.docId);
+    .then(function (data) {
       callback(data.docId);
     })
-    .catch(function(error) {
-      //console.error('Error creating a new document:', error);
+    .catch(function (error) {
+      console.error('Error creating a new document:', error);
     });
 }
 function setupDocument(docId) {
