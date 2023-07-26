@@ -13,7 +13,7 @@ function getDocumentIdFromURL() {
 
 function createNewDocument(callback) {
   // Make a fetch request to your serverless function to create a new document
-  fetch('/api/create-new-document', { method: 'POST' })
+  fetch('/create-new-document', { method: 'POST' })
     .then(function (response) {
       return response.json();
     })
