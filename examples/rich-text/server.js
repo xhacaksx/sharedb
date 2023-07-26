@@ -6,12 +6,13 @@ var WebSocket = require('ws');
 var WebSocketJSONStream = require('@teamwork/websocket-json-stream');
 var ShareDBMongo = require('sharedb-mongo');
 var uuid = require('uuid');
-var mime = require('mime');
+// var mime = require('mime');
+const config = require('./config');
 ShareDB.types.register(richText.type);
 
 
 var backend = new ShareDB({
-  db: new ShareDBMongo('mongodb+srv://akshat:akshat@collab-test.9cngcdw.mongodb.net/?retryWrites=true&w=majority')
+  db: new ShareDBMongo(config.mongodbUrl)
 });
 createDoc(startServer);
 
